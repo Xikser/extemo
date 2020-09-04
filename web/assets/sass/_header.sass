@@ -1,0 +1,64 @@
+.header
+    position: relative
+    width: 70%
+    height: 250px
+    left: 100px
+    display: block
+    transition: transform 0.3s ease-in
+    transform: translate3d(0, -200%, 0)
+
+    &__title
+        position: relative
+        font:
+            size: 5rem
+            family: $accent-font
+        letter-spacing: 14px
+
+        &::after
+            position: absolute
+            content: ''
+            left: 0
+            bottom: 10px
+            width: 50%
+            height: 3px
+            background: white
+
+    &__button
+        cursor: pointer
+        margin-top: 20px
+        color: $disabled-color
+        padding: 5px 10px
+        border:
+            radius: 10px
+            style: solid
+            color: $disabled-color
+            width: 2px
+        background: transparent
+        transition: all 0.2s ease
+        transform: scale(1)
+
+        &:hover
+            transform: scale(1.02)
+            border-color: white
+            color: white
+    
+    &__logo-box
+        position: absolute
+        top: 0
+        right: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        width: 200px
+        height: 200px
+        background: rgba(0, 0, 0, .5)
+        border-radius: 100px
+
+    &__logo
+        display: block
+        transform: rotate(-30deg)
+        font:
+            size: 9rem
+            family: $accent-font
+
+    

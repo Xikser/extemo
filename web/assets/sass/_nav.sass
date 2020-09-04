@@ -1,0 +1,43 @@
+.navbar
+    display: block
+    position: fixed
+    top: 50%
+    left: 50px
+    transform: translateY(-50%)
+
+    &__list
+        display: flex
+        flex-direction: column
+        justify-content: center
+
+    &__item
+        margin: 10px 0
+        font:
+            size: 1.25rem
+
+        
+
+    &__link
+        cursor: pointer
+        color: $disabled-color
+
+        &--is-active
+            color: white
+
+        &:hover i::before, &:hover
+            color: white
+
+        i
+            line-height: 30px
+            background: rgba(0, 0, 0, 0.5)
+            border-radius: 40px
+            display: inline-block
+            text-align: center
+            width: 30px
+            height: 30px
+            font:
+                size: 1.1rem
+
+        span
+            margin-left: 10px
+       
