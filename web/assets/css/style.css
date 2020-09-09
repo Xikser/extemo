@@ -1,6 +1,7 @@
 html {
   font-size: 14px;
   overflow: hidden;
+  scroll-behavior: smooth;
 }
 
 * {
@@ -45,32 +46,24 @@ ol, ul, li {
   list-style: none;
 }
 
-.is--visible {
-  transform: translate3d(0, 0, 0) !important;
-}
-
 .container {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background: linear-gradient(90deg, rgba(22, 75, 79, 0.97381) 31%, rgba(30, 191, 182, 0.522829) 100%);
 }
 
 .content {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 10;
 }
 
 .wrapper {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
+  min-height: 260px;
 }
 
 .scroll-anim {
-  position: absolute;
+  position: fixed;
   left: 50%;
   bottom: 15px;
   transform: translateX(-50%);
@@ -113,6 +106,7 @@ ol, ul, li {
 }
 
 .navbar {
+  z-index: 15;
   display: block;
   position: fixed;
   top: 50%;
@@ -159,14 +153,60 @@ ol, ul, li {
   margin-left: 10px;
 }
 
+.site-map {
+  position: fixed;
+  width: 200px;
+  top: 50%;
+  right: 30px;
+  transform: translateY(-50%);
+  z-index: 15;
+}
+
+.site-map__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.site-map__circle {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  width: 7px;
+  margin: 10px 0;
+  height: 7px;
+  transform: scale(1);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transition: all 300ms ease;
+}
+
+.site-map__circle:hover {
+  transform: scale(1.7);
+  background: white;
+}
+
+.site-map__circle--is-active {
+  transform: scale(1.7) !important;
+  background: white !important;
+}
+
 .header {
   position: relative;
-  width: 70%;
-  height: 250px;
-  left: 100px;
-  display: block;
-  transition: transform 0.3s ease-in;
-  transform: translate3d(0, -200%, 0);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 }
 
 .header__title {
@@ -207,9 +247,6 @@ ol, ul, li {
 }
 
 .header__logo-box {
-  position: absolute;
-  top: 0;
-  right: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -227,11 +264,34 @@ ol, ul, li {
 }
 
 .about {
+  position: relative;
   width: 100%;
-  height: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  display: none;
-  transition: transform 0.3s ease-in;
+}
+
+.about__span {
+  font-size: 7rem;
+  font-family: "Bowlby One SC", cursive;
+  letter-spacing: 10px;
+  opacity: .05;
+  position: absolute;
+  top: -45%;
+  left: 0;
 }
 
 .about__title {
@@ -240,11 +300,89 @@ ol, ul, li {
 }
 
 .about__text {
+  line-height: 35px;
   font-size: 1.2rem;
 }
 
 .services {
-  display: none;
-  transition: transform 0.3s ease-in;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.services__titles {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 80px;
+}
+
+.services__span {
+  font-size: 7rem;
+  font-family: "Bowlby One SC", cursive;
+  letter-spacing: 10px;
+  opacity: .05;
+  position: absolute;
+  top: -145%;
+  left: 0;
+}
+
+.services__title {
+  font-family: "Bowlby One SC", cursive;
+  letter-spacing: 2px;
+}
+
+.services__content {
+  position: relative;
+  width: 1200px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.services__box {
+  width: 350px;
+  height: 450px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid #56bae9;
+  border-radius: 8px;
+  padding: 60px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: all .35s ease;
+}
+
+.services__box:hover {
+  background: rgba(255, 255, 255, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.55);
+}
+
+.services__box i {
+  font-size: 2.25rem;
+}
+
+.services__box i::before {
+  color: #56bae9;
+}
+
+.services__subtitle {
+  margin: 50px auto;
+  font-size: 2.25rem;
+}
+
+.project {
+  width: 100%;
+  height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */
