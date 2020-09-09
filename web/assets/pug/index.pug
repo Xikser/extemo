@@ -12,12 +12,13 @@ html(lang="en" xmlns:th="http://www.thymeleaf.org")
     body
         main.container
             include navbar
+            include site-map
 
             section.content
-                .wrapper
-                    include header
-                    include about
-                    include services
+                include header
+                include about
+                include services
+                include projects
 
                 .scroll-anim
                     .scroll
