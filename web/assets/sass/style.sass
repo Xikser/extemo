@@ -1,10 +1,11 @@
 $disabled-color: #a19e9e
-$accent-color: #ff0000
+$accent-color: #56bae9
 $accent-font: 'Bowlby One SC', cursive
     
 html
     font-size: 14px
     overflow: hidden
+    scroll-behavior: smooth
 
 *
     box-sizing: border-box
@@ -45,10 +46,12 @@ ol, ul, li
     list-style: none
 
 .is--visible
-    transform: translate3d(0, 0, 0) !important
+    // transform: translate3d(0, 0, 0) !important
 
 @import 'main'
 @import 'nav'
+@import 'site-map'
 @import 'header'
 @import 'about'
 @import 'services'
+@import 'projects'

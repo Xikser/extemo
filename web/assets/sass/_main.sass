@@ -1,22 +1,18 @@
 .container
     width: 100%
-    height: 100%
+    height: 100vh
     background: linear-gradient(90deg, rgba(22,75,79,0.9738095921962535) 31%, rgba(30,191,182,0.5228292000393908) 100%)
 
 .content
     width: 100%
     height: 100%
-    display: flex
-    justify-content: center
-    align-items: center
+    z-index: 10
 
 .wrapper
-    width: 100%
-    max-width: 1200px
-    margin: 0 auto
+    min-height: 260px
 
 .scroll-anim
-    position: absolute
+    position: fixed
     left: 50%
     bottom: 15px
     transform: translateX(-50%)

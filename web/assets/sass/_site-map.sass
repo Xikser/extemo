@@ -1,0 +1,36 @@
+.site-map
+    position: fixed
+    width: 200px
+    top: 50%
+    right: 30px
+    transform: translateY(-50%)
+    z-index: 15
+
+    &__list
+        display: flex
+        flex-direction: column
+        align-items: center
+
+    &__circle
+        position: relative
+        cursor: pointer
+        display: inline-block
+        width: 7px
+        margin: 10px 0
+        height: 7px
+        transform: scale(1)
+        border:
+            radius: 50%
+        background: rgba(255, 255, 255, 0.5)
+        transition: all 300ms ease
+
+        &:hover
+            transform: scale(1.7)
+            background: rgba(255, 255, 255, 1)
+
+        &--is-active
+            transform: scale(1.7) !important
+            background: rgba(255, 255, 255, 1) !important
+
+  
+    
