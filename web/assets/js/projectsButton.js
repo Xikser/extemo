@@ -21,35 +21,32 @@ buttonMap.set(graphicButton, graphic);
 buttonMap.set(photosButton, photos);
 
 for(const button of buttonMap.keys()) {
-    button.addEventListener('click', changeSection)
+    button.addEventListener('click', getValues)
 }
 
-function changeSection() {
-    const section = buttonMap.get(this);
-    changeButtonStyle(this)
-    hideSection();
-    showSection(section);
-}
-
-function changeButtonStyle(currentButton) {
+function getValues() {
     buttonMap.forEach((section, button) => {
-        if(button.classList.contains(buttonIsActive))
+        if (button.classList.contains(buttonIsActive)) {
             button.classList.remove(buttonIsActive);
-
-        currentButton.classList.add(buttonIsActive)
-    })
-}
-
-function hideSection() {
-    buttonMap.forEach(element => {
-        if (element.classList.contains(sectionIsActive)) {
-            hideAnimation(element);
-
-            setTimeout(function() {
-                element.classList.remove(sectionIsActive)
+            setButtonToActive(this);
+        }
+        
+        if (section.classList.contains(sectionIsActive)) {
+            hideAnimation(section);
+            
+            setTimeout(function () {
+                section.classList.remove(sectionIsActive)
             }, 390)
         }
     })
+    
+    const section = buttonMap.get(this);
+    showSection(section);
+
+}
+
+function setButtonToActive(currentButton) {
+    currentButton.classList.add(buttonIsActive)
 }
 
 function hideAnimation(section) {
@@ -58,16 +55,13 @@ function hideAnimation(section) {
 }
 
 function showSection(section) {
-    if (!section.classList.contains(sectionIsActive)) {
-        showAnimation(section);
+    changeScaleProperty(section);
         
-        setTimeout(function () {
-            section.classList.add(sectionIsActive)
-        }, 400)
-    }
+    setTimeout(function () {
+        section.classList.add(sectionIsActive)
+    }, 400)
 }
 
-function showAnimation(section) {
-    section.style.setProperty('transition', 'all 400ms ease');
+function changeScaleProperty(section) {
     section.style.setProperty('transform', 'scale(1)');
 }
