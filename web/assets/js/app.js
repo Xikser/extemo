@@ -7,7 +7,6 @@ const pricing = document.querySelector('.pricing');
 const contact = document.querySelector('.contact');
 const isVisibleClass = 'is--visible';
 
-
 const linkMap = new Map();
 
 document.querySelectorAll('.home-link').forEach(e => linkMap.set(e, header))
