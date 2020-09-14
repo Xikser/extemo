@@ -1,35 +1,15 @@
 .projects
-    width: 100%
-    height: 100vh
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
+    @include containerSettings
 
     &__titles
-        position: relative
-        display: flex
-        flex-direction: column
-        align-items: center
-        justify-content: center
-        width: 100%
-        max-width: 1200px
-        margin-bottom: 80px
+        @include titles
 
     &__span
-        font:
-            size: 7rem
-            family: $accent-font
-        letter-spacing: 10px
-        opacity: .05
-        position: absolute
+        @include titleSpan
         top: -145%
-        left: 0
  
     &__title
-        font:
-            family: $accent-font
-        letter-spacing: 2px
+        @include title
 
     &__content
         display: flex
@@ -49,21 +29,6 @@
         margin-bottom: 25px
 
     &__button
-        cursor: pointer
-        margin: 0 10px
-        color: $disabled-color
-        padding: 5px 15px
-        font:
-            size: 1.15rem
-        border:
-            radius: 10px
-            style: solid
-            color: $disabled-color
-            width: 2px
-        background: transparent
-        transition: all 0.2s ease
-        transform: scale(1)
-
         &:hover
             transform: scale(1.02)
             border-color: white
@@ -170,3 +135,5 @@
             color: white
             transform: translate(-50%, -50%)
         
+
+@import 'viewer'

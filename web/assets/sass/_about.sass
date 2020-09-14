@@ -1,10 +1,5 @@
 .about
-    position: relative
-    width: 100%
-    height: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
+    @include containerSettings
 
     &__wrapper
         position: relative
@@ -17,20 +12,14 @@
         align-items: center
         text-align: center
 
+
+
     &__span
-        font:
-            size: 7rem
-            family: $accent-font
-        letter-spacing: 10px
-        opacity: .05
-        position: absolute
+        @include titleSpan
         top: -45%
-        left: 0
 
     &__title
-        font:
-            family: $accent-font
-        letter-spacing: 5px
+        @include title
 
     &__text
         line-height: 35px

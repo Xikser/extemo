@@ -1,10 +1,5 @@
 .header
-    position: relative
-    width: 100%
-    height: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
+    @include containerSettings
 
     &__wrapper
         width: 100%
@@ -29,26 +24,7 @@
             width: 50%
             height: 3px
             background: white
-
-    &__button
-        cursor: pointer
-        margin-top: 20px
-        color: $disabled-color
-        padding: 5px 10px
-        border:
-            radius: 10px
-            style: solid
-            color: $disabled-color
-            width: 2px
-        background: transparent
-        transition: all 0.2s ease
-        transform: scale(1)
-
-        &:hover
-            transform: scale(1.02)
-            border-color: white
-            color: white
-    
+            
     &__logo-box
         display: flex
         align-items: center

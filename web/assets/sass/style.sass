@@ -48,6 +48,52 @@ ol, ul, li
 .is--visible
     // transform: translate3d(0, 0, 0) !important
 
+.button
+    cursor: pointer
+    display: inline-block
+    margin: 0 10px
+    color: $disabled-color
+    padding: 5px 15px
+    font:
+        size: 1.15rem
+    border:
+        radius: 10px
+        style: solid
+        color: $disabled-color
+        width: 2px
+    background: transparent
+    transition: all 0.2s ease
+    transform: scale(1)
+
+    &--header-margin
+        margin-top: 20px
+
+        &:hover
+            transform: scale(1.02)
+            border-color: white
+            color: white
+
+    &__pricing
+        position: absolute
+        bottom: 50px
+        border-color: white
+        color: white
+        
+        &:hover
+            border-color: $accent-color
+            transform: scale(1.02)
+
+    &__contact
+        margin-top: 25px
+
+        &:hover
+            color: white
+            border-color: $accent-color
+            transform: scale(1.02)
+            
+
+
+@import 'mixins'
 @import 'main'
 @import 'nav'
 @import 'site-map'
@@ -55,3 +101,5 @@ ol, ul, li
 @import 'about'
 @import 'services'
 @import 'projects'
+@import 'pricing'
+@import 'contact'

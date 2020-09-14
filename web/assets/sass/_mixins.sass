@@ -1,0 +1,32 @@
+@mixin containerSettings
+    position: relative
+    width: 100%
+    height: 100vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
+@mixin titles
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    width: 100%
+    max-width: 1200px
+    margin-bottom: 80px
+
+@mixin title
+    font:
+        family: $accent-font
+    letter-spacing: 2px
+
+@mixin titleSpan
+    font:
+        size: 7rem
+        family: $accent-font
+    letter-spacing: 10px
+    opacity: .05
+    position: absolute
+    left: 0

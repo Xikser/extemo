@@ -1,0 +1,58 @@
+.contact
+    @include containerSettings
+
+    &__titles
+        @include titles
+
+    &__title
+        @include title
+
+    &__span
+        @include titleSpan
+        top: -150%
+
+    &__content
+        width: 100%
+        max-width: 1200px
+    
+    &__form
+        width: 550px
+        margin: 0 auto
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+
+        input
+            width: 100%
+            margin: 15px 0
+            padding: 10px 10px
+            background: transparent
+            border: none
+            border-bottom: 2px solid $accent-color
+            caret-color: white
+            color: white
+
+            &::placeholder
+                color: white
+
+        textarea
+            min-width: 550px
+            max-width: 550px
+            min-height: 230px
+            max-height: 230px
+            cursor: text
+            white-space: wrap
+            outline: 0
+            color: black
+            appearance: none
+            overflow: hidden
+            width: auto
+            resize: none
+            height: auto
+            margin: 25px 0
+            padding: 10px
+            caret-color: white
+            background: rgba(255, 255, 255, .1)
+            border: 2px solid $accent-color
+            color: white
