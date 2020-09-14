@@ -35,12 +35,12 @@
 //     } 
 // }
 
-// if (e.deltaY < 0) {
-//     content.style.setProperty('transition', 'all 700ms ease');
-//     content.style.setProperty('transform', 'translate3d(0,' + offsetTop + 'px' + ', 0)');
-// }
+// // if (e.deltaY < 0) {
+// //     content.style.setProperty('transition', 'all 700ms ease');
+// //     content.style.setProperty('transform', 'translate3d(0,' + offsetTop + 'px' + ', 0)');
+// // }
 
-// if (e.deltaY > 0) {
-//     content.style.setProperty('transition', 'all 700ms ease');
-//     content.style.setProperty('transform', 'translate3d(0,' + -offsetTop + 'px' + ', 0)');
-// }
+// // if (e.deltaY > 0) {
+// //     content.style.setProperty('transition', 'all 700ms ease');
+// //     content.style.setProperty('transform', 'translate3d(0,' + -offsetTop + 'px' + ', 0)');
+// // }
