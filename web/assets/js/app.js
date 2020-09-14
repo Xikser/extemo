@@ -3,6 +3,8 @@ const header = document.querySelector('.header');
 const about = document.querySelector('.about');
 const services = document.querySelector('.services');
 const projects = document.querySelector('.projects');
+const pricing = document.querySelector('.pricing');
+const contact = document.querySelector('.contact');
 const isVisibleClass = 'is--visible';
 
 
@@ -12,6 +14,8 @@ document.querySelectorAll('.home-link').forEach(e => linkMap.set(e, header))
 document.querySelectorAll('.about-link').forEach(e => linkMap.set(e, about));
 document.querySelectorAll('.services-link').forEach(e => linkMap.set(e, services));
 document.querySelectorAll('.projects-link').forEach(e => linkMap.set(e, projects));
+document.querySelectorAll('.pricing-link').forEach(e => linkMap.set(e, pricing));
+document.querySelectorAll('.contact-link').forEach(e => linkMap.set(e, contact));
 
 for (const link of linkMap.keys()) {
     link.addEventListener('click', setSection)
