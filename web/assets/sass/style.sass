@@ -44,10 +44,7 @@ a
 
 ol, ul, li
     list-style: none
-
-.is--visible
-    // transform: translate3d(0, 0, 0) !important
-
+    
 .button
     cursor: pointer
     display: inline-block
@@ -83,6 +80,9 @@ ol, ul, li
             border-color: $accent-color
             transform: scale(1.02)
 
+        @media (max-width: 1200px)
+            bottom: 30px
+
     &__contact
         margin-top: 25px
 
@@ -90,8 +90,10 @@ ol, ul, li
             color: white
             border-color: $accent-color
             transform: scale(1.02)
-            
 
+@media (max-width: 980px)
+    .button
+        padding: 5px
 
 @import 'mixins'
 @import 'main'

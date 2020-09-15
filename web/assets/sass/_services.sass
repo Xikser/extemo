@@ -46,3 +46,47 @@
         margin: 50px auto
         font:
             size: 2.25rem
+
+@media (max-width: 1200px)
+    .services
+
+        &__titles
+            margin-bottom: 30px
+
+        &__span
+            display: none
+
+        &__content
+            width: 100%
+            justify-content: space-evenly
+
+        &__box
+            width: 275px
+            height: 375px
+
+@media (max-width: 980px)
+    .services
+
+        &__content
+            flex-direction: row
+            align-items: center
+
+@media (max-width: 736px)
+    .services
+
+        &__box
+            width: 220px
+            height: 340px
+            padding: 25px 20px
+
+@media (max-width: 480px)
+    .services
+
+        &__content
+            height: 100%
+
+        &__box
+            height: 280px
+
+        &__subtitle
+            margin: 15px 0

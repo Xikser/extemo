@@ -16,8 +16,6 @@
         font:
             size: 1.25rem
 
-        
-
     &__link
         cursor: pointer
         color: $disabled-color
@@ -41,4 +39,102 @@
 
         span
             margin-left: 10px
-       
+
+.mobilenav-menu-icon
+    display: none
+
+.mobilenav
+    display: none
+
+
+@media (max-width: 1200px)
+    .navbar
+        width: 100%
+        top: 0
+        left: 0
+        transform: translateY(0)
+        background: rgba(0, 0, 0, .25)
+        border-bottom: 2px solid $accent-color
+
+        &__list
+            flex-direction: row
+            justify-content: space-evenly
+
+@media (max-width: 736px)
+    .navbar
+        display: none
+
+    .mobilenav-menu-icon
+        z-index: 12
+        display: block
+        position: absolute
+        top: 5px
+        right: 10px
+        font:
+            size: 2rem
+        padding: 5px 10px
+        background: rgba(0, 0, 0, .25)
+        cursor: pointer
+        transition: all .3s ease
+        border-radius: 8px
+
+        &:hover
+            background: rgba(0, 0, 0, .45)
+
+    .mobilenav
+        position: absolute
+        top: 0
+        left: 0
+        z-index: 30
+        display: none
+        width: 100%
+        height: 75%
+        background: rgba(0, 0, 0, .8)
+        border-bottom: 2px solid $accent-color
+        
+        &__close-icon
+            transition: all .3s ease
+            cursor: pointer
+            position: absolute
+            border-radius: 8px
+            top: 5px
+            right: 10px
+            font:
+                size: 2.25rem
+            padding: 5px 10px
+            background: rgba(255, 255, 255, .25)
+
+            &:hover
+                background: rgba(255, 255, 255, .45)
+
+        &__list
+            display: flex
+            flex-direction: column
+            height: 100%
+            width: 100%
+            margin-top: 15px
+            align-items: center
+            justify-content: space-evenly
+
+        &__item
+            width: 100%
+            padding: 7.6px 0
+            text-align: center
+            cursor: pointer
+            font:
+                size: 1.5rem
+            transition: all .35s ease-in-out
+
+            &:hover
+                background: $accent-color
+
+            a
+                display: block
+                width: 100%
+
+            i
+                padding-right: 10px
+
+// @media (max-width: 736px)
+// @media (max-width: 480px)
+// @media (max-width: 600px)

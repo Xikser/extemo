@@ -56,3 +56,27 @@
             background: rgba(255, 255, 255, .1)
             border: 2px solid $accent-color
             color: white
+
+@media (max-width: 1200px)
+    .contact
+
+        &__titles
+            margin-bottom: 0
+
+        &__span
+            display: none
+
+@media (max-width: 480px)
+    .contact
+
+        &__content
+            max-width: 100%
+            width: 100%
+            padding: 0 25px
+
+        &__form
+            width: 100%
+
+            textarea
+                min-width: 100%
+                max-width: 100%

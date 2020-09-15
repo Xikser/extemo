@@ -61,3 +61,46 @@
             line-height: 30px
             font:
                 size: 1.1rem
+
+@media (max-width: 1200px)
+    .pricing
+
+        &__titles
+            margin-bottom: 30px
+
+        &__span
+            display: none
+
+        &__content
+            max-width: 100%
+            justify-content: space-evenly
+
+        &__box
+            width: 275px
+
+@media (max-width: 736px)
+    .pricing
+
+        &__box
+            width: 200px
+            height: 375px
+            padding: 0 10px
+
+        &__box-body
+            margin: 10px 0 0
+
+        &__title
+            margin: 20px 0 0
+
+        &__price
+            margin: 12px 0 12px
+
+@media (max-width: 480px)
+    .pricing
+
+        &__content
+            flex-direction: column
+            height: 100%
+
+        &__box
+            height: 275px
