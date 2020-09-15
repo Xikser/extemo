@@ -24,3 +24,34 @@ nav.navbar
             a.navbar__link(class="contact-link")
                 i.fas.fa-envelope
                 span Contact
+
+.mobilenav-menu-icon
+    i.fas.fa-bars.mobilenav__active-icon
+
+nav.mobilenav
+    i.fas.fa-times.mobilenav__close-icon
+    ul.mobilenav__list
+        li.mobilenav__item
+            a.mobilenav__link.mobilenav__link--is-active(class="home-link")
+                i.fas.fa-home
+                span Home
+        li.mobilenav__item
+            a.mobilenav__link(class="about-link")
+                i.fas.fa-users
+                span About
+        li.mobilenav__item
+            a.mobilenav__link(class="services-link")
+                i.fas.fa-server
+                span Services
+        li.mobilenav__item
+            a.mobilenav__link(class="projects-link")
+                i.fas.fa-cog
+                span Projects
+        li.mobilenav__item
+            a.mobilenav__link(class="pricing-link")
+                i.fas.fa-dollar-sign
+                span Pricing
+        li.mobilenav__item
+            a.mobilenav__link(class="contact-link")
+                i.fas.fa-envelope
+                span Contact
