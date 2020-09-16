@@ -17,15 +17,32 @@ linkMap.set(document.querySelector('.pricing-link'), pricing);
 linkMap.set(document.querySelector('.contact-link'), contact);
 
 for (const link of linkMap.keys()) {
-    link.addEventListener('click', setSection)
+    link.addEventListener('click', detectWidth)
 }
 
-function setSection() {
+function detectWidth() {
     const section = linkMap.get(this);
-    displaySection(section);
+    var deviceWidth = window.innerWidth;
+
+    if(deviceWidth > 736) {
+        displaySectionOnDesktop(section);
+    } else {
+        displaySectionOnMobile(section);
+    }
 }
 
-function displaySection(section) {
+function displaySectionOnMobile(section) {
+    const offsetTop = section.offsetTop;
+    const previousSection = document.querySelector('.is--visible');
+    setActiveSection(previousSection, section)
+
+    scroll({
+        top: offsetTop,
+        behavior: "smooth"
+    });
+}
+
+function displaySectionOnDesktop(section) {
     const offsetTop = section.offsetTop;
 
     content.style.setProperty('transition', 'all 700ms ease');
@@ -53,7 +70,17 @@ function getLinkForSection(section) {
 }
 
 
-window.addEventListener('wheel', scrollSection);
+window.addEventListener('wheel', handleWheel);
+
+function handleWheel(e) {
+    window.removeEventListener('wheel', handleWheel)
+
+    setTimeout(() => {
+        window.addEventListener('wheel', handleWheel);
+    }, 1000)
+
+    scrollSection(e);
+}
 
 function scrollSection(e) {
     const currentSection = document.querySelector('.is--visible');
@@ -67,7 +94,7 @@ function scrollSection(e) {
     }
 
     const newSection = getMapEntryFromIndex(newSectionIndex)[1];
-    displaySection(newSection);
+    displaySectionOnDesktop(newSection);
 }
 
 
