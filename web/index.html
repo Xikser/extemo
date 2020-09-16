@@ -11,7 +11,8 @@
   </head>
   <body>
     <main class="container">
-      <nav class="navbar">
+      <div class="mobilenav-menu-icon"><i class="fas fa-bars mobilenav__active-icon"></i></div>
+      <nav class="navbar"><i class="fas fa-times navbar__close-icon"></i>
         <ul class="navbar__list">
           <li class="navbar__item"><a class="navbar__link navbar__link--is-active home-link"><i class="fas fa-home"></i><span>Home</span></a></li>
           <li class="navbar__item"><a class="navbar__link about-link"><i class="fas fa-users"></i><span>About</span></a></li>
@@ -21,26 +22,19 @@
           <li class="navbar__item"><a class="navbar__link contact-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
         </ul>
       </nav>
-      <div class="mobilenav-menu-icon"><i class="fas fa-bars mobilenav__active-icon"></i></div>
-      <nav class="mobilenav"><i class="fas fa-times mobilenav__close-icon"></i>
-        <ul class="mobilenav__list">
-          <li class="mobilenav__item"><a class="mobilenav__link mobilenav__link--is-active home-link"><i class="fas fa-home"></i><span>Home</span></a></li>
-          <li class="mobilenav__item"><a class="mobilenav__link about-link"><i class="fas fa-users"></i><span>About</span></a></li>
-          <li class="mobilenav__item"><a class="mobilenav__link services-link"><i class="fas fa-server"></i><span>Services</span></a></li>
-          <li class="mobilenav__item"><a class="mobilenav__link projects-link"><i class="fas fa-cog"></i><span>Projects</span></a></li>
-          <li class="mobilenav__item"><a class="mobilenav__link pricing-link"><i class="fas fa-dollar-sign"></i><span>Pricing</span></a></li>
-          <li class="mobilenav__item"><a class="mobilenav__link contact-link"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
-        </ul>
-      </nav>
       <section class="content">
         <section class="header is--visible">
           <div class="header__wrapper wrapper">
             <div class="header__titles">
               <h1 class="header__title">Extemo</h1>
               <h4 class="header__subtitle">Your free web template</h4>
-              <button class="button button--header-margin about-link">Get started</button>
             </div>
             <div class="header__logo-box"><span class="header__logo">E</span></div>
+          </div>
+          <div class="scroll-anim">
+            <div class="scroll">
+              <div class="dot"></div>
+            </div>
           </div>
         </section>
         <section class="about">
@@ -223,11 +217,10 @@
             </form>
           </div>
         </section>
-        <div class="scroll-anim">
-          <div class="scroll"></div>
-          <div class="dot"></div>
-        </div>
       </section>
+      <footer class="footer">
+        <p>All rights reserved | 2020</p><span>Daniel Wyskup </span>
+      </footer>
     </main>
     <script src="assets/js/app.js"></script>
     <script src="assets/js/projectsButton.js"></script>

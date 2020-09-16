@@ -16,9 +16,8 @@ body {
   background: url("../../images/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  z-index: 1;
+  background-attachment: fixed;
   width: 100%;
-  height: 100vh;
 }
 
 h1 {
@@ -104,11 +103,26 @@ ol, ul, li {
   .button {
     padding: 5px;
   }
+  .button__pricing {
+    margin: 0;
+  }
+  body {
+    height: 100%;
+  }
+}
+
+@media (max-width: 736px) {
+  html {
+    overflow: visible;
+  }
+  body {
+    height: 100%;
+  }
 }
 
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(90deg, rgba(22, 75, 79, 0.97381) 31%, rgba(30, 191, 182, 0.522829) 100%);
 }
 
@@ -116,14 +130,38 @@ ol, ul, li {
   width: 100%;
   height: 100%;
   z-index: 10;
+  display: block;
 }
 
-.wrapper {
-  min-height: 260px;
+.footer {
+  position: fixed;
+  left: 25px;
+  bottom: 10px;
+}
+
+.footer span {
+  font-weight: 600;
+  color: #56bae9;
+}
+
+@media (max-width: 736px) {
+  .footer {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    left: 0;
+    bottom: 0;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    border-top: 2px solid #56bae9;
+    background: rgba(0, 0, 0, 0.75);
+  }
 }
 
 .scroll-anim {
-  position: fixed;
+  position: absolute;
   left: 50%;
   bottom: 15px;
   transform: translateX(-50%);
@@ -165,6 +203,12 @@ ol, ul, li {
   }
 }
 
+@media (max-width: 736px) {
+  .scroll-anim {
+    display: none;
+  }
+}
+
 .navbar {
   z-index: 15;
   display: block;
@@ -172,6 +216,10 @@ ol, ul, li {
   top: 50%;
   left: 50px;
   transform: translateY(-50%);
+}
+
+.navbar__close-icon {
+  display: none !important;
 }
 
 .navbar__list {
@@ -217,10 +265,6 @@ ol, ul, li {
   display: none;
 }
 
-.mobilenav {
-  display: none;
-}
-
 @media (max-width: 1200px) {
   .navbar {
     width: 100%;
@@ -237,15 +281,12 @@ ol, ul, li {
 }
 
 @media (max-width: 736px) {
-  .navbar {
-    display: none;
-  }
   .mobilenav-menu-icon {
     z-index: 12;
     display: block;
-    position: absolute;
-    top: 5px;
-    right: 10px;
+    position: fixed;
+    top: 10px;
+    right: 15px;
     font-size: 2rem;
     padding: 5px 10px;
     background: rgba(0, 0, 0, 0.25);
@@ -256,57 +297,53 @@ ol, ul, li {
   .mobilenav-menu-icon:hover {
     background: rgba(0, 0, 0, 0.45);
   }
-  .mobilenav {
-    position: absolute;
+  .navbar {
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 30;
     display: none;
     width: 100%;
-    height: 75%;
-    background: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
     border-bottom: 2px solid #56bae9;
   }
-  .mobilenav__close-icon {
+  .navbar__close-icon {
     transition: all .3s ease;
     cursor: pointer;
     position: absolute;
     border-radius: 8px;
-    top: 5px;
-    right: 10px;
+    top: 10px;
+    right: 15px;
     font-size: 2.25rem;
     padding: 5px 10px;
+    display: inline-block !important;
     background: rgba(255, 255, 255, 0.25);
   }
-  .mobilenav__close-icon:hover {
+  .navbar__close-icon:hover {
     background: rgba(255, 255, 255, 0.45);
   }
-  .mobilenav__list {
+  .navbar__list {
     display: flex;
     flex-direction: column;
-    height: 100%;
     width: 100%;
-    margin-top: 15px;
-    align-items: center;
+    margin-top: 35px;
     justify-content: space-evenly;
   }
-  .mobilenav__item {
+  .navbar__item {
     width: 100%;
     padding: 7.6px 0;
     text-align: center;
     cursor: pointer;
     font-size: 1.5rem;
+    text-align: center;
     transition: all .35s ease-in-out;
   }
-  .mobilenav__item:hover {
+  .navbar__item:hover {
     background: #56bae9;
   }
-  .mobilenav__item a {
-    display: block;
-    width: 100%;
-  }
-  .mobilenav__item i {
-    padding-right: 10px;
+  .navbar__item:hover a {
+    color: white;
   }
 }
 
@@ -407,6 +444,9 @@ ol, ul, li {
     flex-direction: column;
     align-items: center;
   }
+  .header__logo-box {
+    margin-top: 40px;
+  }
 }
 
 .about {
@@ -438,7 +478,7 @@ ol, ul, li {
   opacity: .05;
   position: absolute;
   left: 0;
-  top: -45%;
+  top: -75%;
 }
 
 .about__title {
@@ -465,6 +505,7 @@ ol, ul, li {
     max-width: 100%;
     height: 100%;
     padding: 0 15px;
+    justify-content: space-evenly;
   }
 }
 
@@ -562,6 +603,9 @@ ol, ul, li {
 }
 
 @media (max-width: 980px) {
+  .services {
+    height: auto;
+  }
   .services__content {
     flex-direction: row;
     align-items: center;
@@ -570,18 +614,17 @@ ol, ul, li {
 
 @media (max-width: 736px) {
   .services__box {
-    width: 220px;
-    height: 340px;
+    width: 260px;
+    height: 380px;
     padding: 25px 20px;
+    justify-content: space-evenly;
+    margin: 25px 0;
   }
 }
 
 @media (max-width: 480px) {
   .services__content {
     height: 100%;
-  }
-  .services__box {
-    height: 280px;
   }
   .services__subtitle {
     margin: 15px 0;
@@ -667,6 +710,7 @@ ol, ul, li {
   padding: 25px;
   min-height: 450px;
   min-width: 1200px;
+  z-index: 25;
 }
 
 .projects__images-container::-webkit-scrollbar {
@@ -776,6 +820,7 @@ ol, ul, li {
   top: 0;
   left: 0;
   display: none;
+  z-index: 50;
 }
 
 .viewer__image-container {
@@ -812,6 +857,16 @@ ol, ul, li {
   background: rgba(0, 0, 0, 0.8);
 }
 
+@media (max-width: 736px) {
+  .viewer__image-container i {
+    top: 30%;
+  }
+  .viewer__image-container img {
+    width: 350px;
+    height: 275px;
+  }
+}
+
 @media (max-width: 1200px) {
   .projects__titles {
     margin-bottom: 30px;
@@ -837,6 +892,11 @@ ol, ul, li {
 }
 
 @media (max-width: 980px) {
+  .projects {
+    text-align: center;
+    height: 1000px;
+    margin: 50px 0 100px;
+  }
   .projects__content {
     width: 100%;
     max-width: 100%;
@@ -957,10 +1017,18 @@ ol, ul, li {
 }
 
 @media (max-width: 736px) {
+  .pricing {
+    text-align: center;
+    height: auto;
+  }
+  .pricing__content {
+    align-items: center;
+  }
   .pricing__box {
-    width: 200px;
+    width: 280px;
     height: 375px;
     padding: 0 10px;
+    margin: 25px 0;
   }
   .pricing__box-body {
     margin: 10px 0 0;
@@ -977,9 +1045,6 @@ ol, ul, li {
   .pricing__content {
     flex-direction: column;
     height: 100%;
-  }
-  .pricing__box {
-    height: 275px;
   }
 }
 
