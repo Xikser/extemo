@@ -6,6 +6,9 @@
     left: 50px
     transform: translateY(-50%)
 
+    &__close-icon
+        display: none !important
+
     &__list
         display: flex
         flex-direction: column
@@ -43,10 +46,6 @@
 .mobilenav-menu-icon
     display: none
 
-.mobilenav
-    display: none
-
-
 @media (max-width: 1200px)
     .navbar
         width: 100%
@@ -61,15 +60,12 @@
             justify-content: space-evenly
 
 @media (max-width: 736px)
-    .navbar
-        display: none
-
     .mobilenav-menu-icon
         z-index: 12
         display: block
-        position: absolute
-        top: 5px
-        right: 10px
+        position: fixed
+        top: 10px
+        right: 15px
         font:
             size: 2rem
         padding: 5px 10px
@@ -81,15 +77,15 @@
         &:hover
             background: rgba(0, 0, 0, .45)
 
-    .mobilenav
-        position: absolute
+    .navbar
+        position: fixed
         top: 0
         left: 0
         z-index: 30
         display: none
         width: 100%
-        height: 75%
-        background: rgba(0, 0, 0, .8)
+        height: 100%
+        background: rgba(0, 0, 0, .9)
         border-bottom: 2px solid $accent-color
         
         &__close-icon
@@ -97,11 +93,12 @@
             cursor: pointer
             position: absolute
             border-radius: 8px
-            top: 5px
-            right: 10px
+            top: 10px
+            right: 15px
             font:
                 size: 2.25rem
             padding: 5px 10px
+            display: inline-block !important
             background: rgba(255, 255, 255, .25)
 
             &:hover
@@ -110,10 +107,8 @@
         &__list
             display: flex
             flex-direction: column
-            height: 100%
             width: 100%
-            margin-top: 15px
-            align-items: center
+            margin-top: 35px
             justify-content: space-evenly
 
         &__item
@@ -123,17 +118,14 @@
             cursor: pointer
             font:
                 size: 1.5rem
+            text-align: center
             transition: all .35s ease-in-out
 
             &:hover
                 background: $accent-color
 
-            a
-                display: block
-                width: 100%
-
-            i
-                padding-right: 10px
+            &:hover a
+                color: white
 
 // @media (max-width: 736px)
 // @media (max-width: 480px)

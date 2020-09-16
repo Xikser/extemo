@@ -18,9 +18,8 @@ body
     background: url("../../images/background.jpg")
     background-repeat: no-repeat
     background-size: cover
-    z-index: 1
+    background-attachment: fixed
     width: 100%
-    height: 100vh
 
 h1
     font:
@@ -95,6 +94,19 @@ ol, ul, li
     .button
         padding: 5px
 
+        &__pricing
+            margin: 0
+
+    body
+        height: 100%
+
+@media (max-width: 736px)
+    html
+        overflow: visible
+
+    body
+        height: 100%
+    
 @import 'mixins'
 @import 'main'
 @import 'nav'
