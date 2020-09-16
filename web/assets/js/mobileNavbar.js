@@ -1,6 +1,6 @@
 const navActiveIcon = document.querySelector('.mobilenav-menu-icon');
-const navCloseIcon = document.querySelector('.mobilenav__close-icon');
-const mobilenav = document.querySelector('.mobilenav');
+const navCloseIcon = document.querySelector('.navbar__close-icon');
+const mobilenav = document.querySelector('.navbar');
 
 navActiveIcon.addEventListener('click', activeNavbar);
 
