@@ -79,7 +79,10 @@ function handleWheel(e) {
         window.addEventListener('wheel', handleWheel);
     }, 1000)
 
-    scrollSection(e);
+    if(viewer.classList.contains('viewer--is-active'))
+        return;
+    else    
+        scrollSection(e);
 }
 
 function scrollSection(e) {

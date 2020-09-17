@@ -13,6 +13,7 @@ function copyImage() {
 
 function pasteImage(image) {
     viewer.style.setProperty('display', 'flex')
+    viewer.classList.add('viewer--is-active')
     imageContainer.appendChild(image)
 }
 
@@ -20,5 +21,6 @@ closeIcon.addEventListener('click', closeViewer);
 
 function closeViewer() {
     viewer.style.removeProperty('display');
+    viewer.classList.remove('viewer--is-active')
     imageContainer.removeChild(imageContainer.childNodes[1]);
 }
