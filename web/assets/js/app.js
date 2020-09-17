@@ -40,6 +40,11 @@ function displaySectionOnMobile(section) {
         top: offsetTop,
         behavior: "smooth"
     });
+
+    setTimeout(() => {
+        mobilenav.style.removeProperty('display');
+        navActiveIcon.style.removeProperty('display');
+    }, 200)
 }
 
 function displaySectionOnDesktop(section) {
